@@ -4,7 +4,7 @@ FROM node:22-alpine
 WORKDIR /app
 
 # Install 9router globally
-RUN npm install -g 9router
+RUN npm i -g 9router@latest --prefer-online
 
 # Runtime port (override with -e PORT=xxxx)
 ENV PORT=3000
