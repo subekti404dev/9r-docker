@@ -7,7 +7,8 @@ WORKDIR /app
 # Install 9router globally
 RUN npm i -g 9router@0.4.45 
 
-COPY cli.js /usr/local/lib/node_modules/9router/cli.js
+# COPY cli.js /usr/local/lib/node_modules/9router/cli.js
+# RUN ls -lah /usr/local/lib/node_modules/9router/
 
 # Runtime port (override with -e PORT=xxxx)
 ENV PORT=3000
@@ -18,4 +19,4 @@ HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
   CMD wget -qO- "http://127.0.0.1:${PORT}/" >/dev/null || exit 1
 
 # Run 9router
-CMD ["sh", "-c", "9router --port ${PORT}"]
+CMD ["sh", "-c", "9router --port ${PORT} --skip-update"]
