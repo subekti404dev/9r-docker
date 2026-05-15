@@ -7,7 +7,9 @@ WORKDIR /app
 # Install 9router globally
 RUN npm i -g 9router@0.4.45 
 
-RUN npm i -g better-sqlite3@12.6.2
+RUN mkdir -p /root/.9router/runtime &&\
+    cd /root/.9router/runtime &&\
+    npm install better-sqlite3@12.6.2 --no-audit --no-fund --prefer-online --no-save 
 
 # Runtime port (override with -e PORT=xxxx)
 ENV PORT=3000
