@@ -1,0 +1,14 @@
+services:
+  9router:
+    image: ghcr.io/subekti404dev/9r-docker:latest
+    container_name: 9router
+    environment:
+      PORT: 3000
+    ports:
+      - "3000:3000"
+    volumes:
+      - 9router_data:/app/data
+    restart: unless-stopped
+
+volumes:
+  9router_data:

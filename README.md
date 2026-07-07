@@ -2,6 +2,19 @@
 
 Docker setup for running `9router` installed via npm.
 
+## Quick Start (Pre-built Image from GHCR)
+
+Pull and run the latest pre-built image:
+
+```bash
+docker compose -f docker-compose.ghcr.yml up -d
+```
+
+Or directly with Docker:
+
+```bash
+docker run -d --name 9router -p 3000:3000 -v 9router_data:/app/data ghcr.io/subekti404dev/9r-docker:latest
+```
 ## Build and run with Docker
 
 ```bash
