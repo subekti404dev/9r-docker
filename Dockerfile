@@ -15,5 +15,5 @@ EXPOSE 3000
 HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
   CMD wget -qO- "http://127.0.0.1:${PORT}/" >/dev/null || exit 1
 
-# Run 9router
+# Run 9router.
 CMD ["sh", "-c", "9router --port ${PORT} --skip-update"]
