@@ -17,3 +17,4 @@ HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
 
 # Run 9router.
 CMD ["sh", "-c", "9router --port ${PORT} --skip-update"]
+
